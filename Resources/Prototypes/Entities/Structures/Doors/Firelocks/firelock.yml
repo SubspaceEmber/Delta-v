@@ -35,7 +35,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
     - type: Sprite
-      sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
+      sprite: _DV/Structures/Doors/Airlocks/Standard/firelock.rsi
       snapCardinals: true
       layers:
         - state: closed
@@ -60,6 +60,16 @@
           visible: false
           shader: unshaded
           map: ["enum.FirelockVisualLayersTemperature.Base"]
+        # DeltaV - begin additions
+        - state: temperature_open_unlit
+          visible: false
+          shader: unshaded
+          map: ["enum.FirelockVisualLayersOpenTemperature.Base"]
+        - state: pressure_open_unlit
+          visible: false
+          shader: unshaded
+          map: ["enum.FirelockVisualLayersOpenPressure.Base"]
+          # DeltaV - end additions
     - type: GenericVisualizer
       visuals:
         enum.FirelockVisuals.PressureWarning:
@@ -70,6 +80,17 @@
           enum.FirelockVisualLayersTemperature.Base:
             True: { visible: true }
             False: { visible: false }
+        #DeltaV - begin additions
+        enum.FirelockVisuals.OpenPressureWarning:
+          enum.FirelockVisualLayersOpenPressure.Base:
+            True: { visible: true }
+            False: { visible: false }
+        enum.FirelockVisuals.OpenTemperatureWarning:
+          enum.FirelockVisualLayersOpenTemperature.Base:
+            True: { visible: true }
+            False: { visible: false }
+        # DeltaV - End Additions
+
     - type: AnimationPlayer
     - type: Fixtures
       fixtures:
@@ -201,7 +222,7 @@
   components:
     - type: StationAiWhitelist
     - type: Sprite
-      sprite: Structures/Doors/edge_door_hazard.rsi
+      sprite: _DV/Structures/Doors/edge_door_hazard.rsi
       snapCardinals: false
     - type: Airtight
       airBlocked: false
@@ -233,3 +254,4 @@
     - type: Construction
       graph: Firelock
       node: FirelockEdge
+    

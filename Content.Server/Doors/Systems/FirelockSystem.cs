@@ -6,11 +6,13 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
+using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Timing; // DeltaV
 
 namespace Content.Server.Doors.Systems
 {
@@ -54,27 +56,52 @@ namespace Content.Server.Doors.Systems
             var xformQuery = GetEntityQuery<TransformComponent>();
             var pointLightQuery = GetEntityQuery<PointLightComponent>();
 
+            var open = true; // DeltaV add aditional variable for doorstate
+
             var query = EntityQueryEnumerator<FirelockComponent, DoorComponent>();
             while (query.MoveNext(out var uid, out var firelock, out var door))
             {
-                // only bother to check pressure on doors that are some variation of closed.
-                if (door.State != DoorState.Closed
-                    && door.State != DoorState.Welded
-                    && door.State != DoorState.Denying)
-                {
-                    continue;
-                }
-
+                // DeltaV - commended out below, check status on all door states
+                // only bother to check pressure on doors that are some variation of closed. 
+                //if (door.State != DoorState.Closed
+                //    && door.State != DoorState.Welded
+                //    && door.State != DoorState.Denying)
+                //{
+                //    continue;
+                //}
+                
+                // DeltaV - begin additions
+                //if (door.State == DoorState.Open)
+                //{
+                //    open = true;
+                //}
+                //else if (door.State == DoorState.Closed)
+                //{
+                //    open = false;
+                //}
+                // DeltaV - end additions
+                
                 if (airtightQuery.TryGetComponent(uid, out var airtight)
                     && xformQuery.TryGetComponent(uid, out var xform)
                     && appearanceQuery.TryGetComponent(uid, out var appearance))
                 {
                     var (pressure, fire) = CheckPressureAndFire(uid, firelock, xform, airtight, airtightQuery);
-                    _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
-                    firelock.Temperature = fire;
-                    firelock.Pressure = pressure;
+                
+                _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
+                firelock.Temperature = fire;
+                firelock.Pressure = pressure;
+                //DeltaV - Begin additions for added conditional to only use these layers when door is closed
+                if (airtightQuery.TryGetComponent(uid, out airtight))
+                {
                     _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
                     _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
+                }
+                else if (!airtightQuery.TryGetComponent(uid, out airtight))
+                {
+                    _appearance.SetData(uid, FirelockVisuals.OpenPressureWarning, pressure, appearance);
+                    _appearance.SetData(uid, FirelockVisuals.OpenTemperatureWarning, fire, appearance);
+                }
+                    //DeltaV - End additions
                     Dirty(uid, firelock);
 
                     if (pointLightQuery.TryComp(uid, out var pointLight))
