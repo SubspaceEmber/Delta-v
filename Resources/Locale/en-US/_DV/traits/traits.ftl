@@ -41,3 +41,6 @@ trait-depression-desc = No mechanical effect. The world is dark but there is a l
 
 trait-dysgraphia-name = Unable to write
 trait-dysgraphia-desc = You cannot write, whether because of a disability, your history, or by choice.
+
+trait-hypoesthesia-name = Unable to feel temperature
+trait-hypoesthesia-desc = You are unable to determine the temperature of the air around you. 

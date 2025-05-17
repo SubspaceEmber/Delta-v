@@ -38,3 +38,11 @@
   category: Disabilities
   components:
   - type: BlockWriting
+
+- type: trait
+  id: Hypoesthesia
+  name: trait-hypoesthesia-name
+  description: trait-Hypoesthesia-desc
+  category: Disabilties
+  components:
+  - type: Hypoesthesia
