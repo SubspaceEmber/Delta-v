@@ -91,17 +91,17 @@ namespace Content.Server.Doors.Systems
                 firelock.Temperature = fire;
                 firelock.Pressure = pressure;
                 //DeltaV - Begin additions for added conditional to only use these layers when door is closed
-                if (airtightQuery.TryGetComponent(uid, out airtight))
-                {
-                    _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
-                    _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
-                }
-                else if (!airtightQuery.TryGetComponent(uid, out airtight))
-                {
-                    _appearance.SetData(uid, FirelockVisuals.OpenPressureWarning, pressure, appearance);
-                    _appearance.SetData(uid, FirelockVisuals.OpenTemperatureWarning, fire, appearance);
-                }
-                    //DeltaV - End additions
+                // if (airtightQuery.TryGetComponent(uid, out airtight))
+                // {
+                //     _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
+                //     _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
+                // }
+                // else if (!airtightQuery.TryGetComponent(uid, out airtight))
+                // {
+                //     _appearance.SetData(uid, FirelockVisuals.OpenPressureWarning, pressure, appearance);
+                //     _appearance.SetData(uid, FirelockVisuals.OpenTemperatureWarning, fire, appearance);
+                // }
+                //     //DeltaV - End additions
                     Dirty(uid, firelock);
 
                     if (pointLightQuery.TryComp(uid, out var pointLight))

@@ -58,14 +58,14 @@ public sealed class FirelockSystem : SharedFirelockSystem
             state = DoorState.Closed;
         
         // DeltaV begin additions
-        // if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.OpenTemperatureWarning, out state, args.Component))
-        //     openTemperatureWarningVisible = state == DoorState.Open;
-        // if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.OpenPressureWarning, out state, args.Component))
-        //     openPressureWarningVisible = state == DoorState.Open;
-        // if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.TemperatureWarning, out state, args.Component))
-        //     temperatureWarningVisible = state == DoorState.Closed;
-        // if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.PressureWarning, out state, args.Component))
-        //     pressureWarningVisible = state == DoorState.Closed;
+        if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.OpenTemperatureWarning, out state, args.Component))
+            openTemperatureWarningVisible = state == DoorState.Open;
+        if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.OpenPressureWarning, out state, args.Component))
+            openPressureWarningVisible = state == DoorState.Open;
+        if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.TemperatureWarning, out state, args.Component))
+            temperatureWarningVisible = state == DoorState.Closed;
+        if (!_appearanceSystem.TryGetData<DoorState>(uid, FirelockVisuals.PressureWarning, out state, args.Component))
+            pressureWarningVisible = state == DoorState.Closed;
         // DeltaV end additions
 
         boltedVisible = _appearanceSystem.TryGetData<bool>(uid, DoorVisuals.BoltLights, out var lights, args.Component) && lights;

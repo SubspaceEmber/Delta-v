@@ -133,25 +133,25 @@ public abstract class SharedFirelockSystem : EntitySystem
         
         // Check if door is closed and (should be) holding pressure
         
-        // if (firelock != null && firelock.Pressure == true && door.State != DoorState.Closed)
-        // {
-        //     _appearance.SetData(uid, FirelockVisuals.PressureWarning, firelock.Pressure, appearance);
-        // }
-        // // Check if door is closed and (should be) holding temperature
-        // if (firelock != null && firelock.Temperature == true && door.State != DoorState.Closed)
-        // {
-        //     _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, firelock.Temperature, appearance);
-        // }
-        // // Check if door is open and (should be) holding pressure
-        // if (firelock != null && firelock.Pressure == true && door.State != DoorState.Open)
-        // {
-        //     _appearance.SetData(uid, FirelockVisuals.OpenPressureWarning, firelock.Pressure, appearance);
-        // }
-        // // Check if door is open and (should be) holding temperature
-        // if (firelock != null && firelock.Temperature == true && door.State != DoorState.Open)
-        // {
-        //     _appearance.SetData(uid, FirelockVisuals.OpenTemperatureWarning, firelock.Temperature, appearance);
-        // }
+        if (firelock != null && firelock.Pressure == true && door.State != DoorState.Closed)
+        {
+            _appearance.SetData(uid, FirelockVisuals.PressureWarning, firelock.Pressure, appearance);
+        }
+        // Check if door is closed and (should be) holding temperature
+        if (firelock != null && firelock.Temperature == true && door.State != DoorState.Closed)
+        {
+            _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, firelock.Temperature, appearance);
+        }
+        // Check if door is open and (should be) holding pressure
+        if (firelock != null && firelock.Pressure == true && door.State != DoorState.Open)
+        {
+            _appearance.SetData(uid, FirelockVisuals.OpenPressureWarning, firelock.Pressure, appearance);
+        }
+        // Check if door is open and (should be) holding temperature
+        if (firelock != null && firelock.Temperature == true && door.State != DoorState.Open)
+        {
+            _appearance.SetData(uid, FirelockVisuals.OpenTemperatureWarning, firelock.Temperature, appearance);
+        }
         // DeltaV - end additions
         
         if (!Resolve(uid, ref firelock, ref appearance, false))
