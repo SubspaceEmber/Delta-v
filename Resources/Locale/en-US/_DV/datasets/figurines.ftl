@@ -36,6 +36,8 @@ figurines-prosec-3 = If you would take a look at this updated autopsy report.
 
 figurines-roboticist-1 = Wanna get borged?
 figurines-roboticist-2 = I wish I had binary...
+figurines-roboticist-3 = So I shouldn't have given the clown speed legs?
+figurines-roboticist-4 = Borgs need hats!
 
 figurines-slimechem-1 = So much cogni...
 figurines-slimechem-2 = WHO BOMBED MY MEDS?
@@ -68,3 +70,45 @@ figurines-cosmiccultist-5 = My cult so cosmic!
 figurines-cosmiccultist-6 = Wanna go stargazing?
 figurines-cosmiccultist-7 = No, I don't know where the rift went.
 figurines-cosmiccultist-8 = Join us. We've got lollipops.
+
+figurines-borgengineering-1 = beep
+figurines-borgengineering-2 = beep
+figurines-borgengineering-3 = beep
+figurines-borgengineering-4 = beep
+figurines-borgengineering-5 = beep
+
+figurines-borggeneric-1 = beep
+figurines-borggeneric-2 = beep
+figurines-borggeneric-3 = beep
+figurines-borggeneric-4 = beep
+figurines-borggeneric-5 = beep
+
+figurines-borgjanitor-1 = beep
+figurines-borgjanitor-2 = beep
+figurines-borgjanitor-3 = beep
+figurines-borgjanitor-4 = beep
+figurines-borgjanitor-5 = beep
+
+figurines-borgmedical-1 = beep
+figurines-borgmedical-2 = beep
+figurines-borgmedical-3 = beep
+figurines-borgmedical-4 = beep
+figurines-borgmedical-5 = beep
+
+figurines-borgsalvage-1 = beep
+figurines-borgsalvage-2 = beep
+figurines-borgsalvage-3 = beep
+figurines-borgsalvage-4 = beep
+figurines-borgsalvage-5 = beep
+
+figurines-borgsecurity-1 = beep
+figurines-borgsecurity-2 = beep
+figurines-borgsecurity-3 = beep
+figurines-borgsecurity-4 = beep
+figurines-borgsecurity-5 = beep
+
+figurines-borgservice-1 = beep
+figurines-borgservice-2 = beep
+figurines-borgservice-3 = beep
+figurines-borgservice-4 = beep
+figurines-borgservice-5 = beep
