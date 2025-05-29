@@ -98,40 +98,40 @@
   id: FigurinesBorgEngineering
   values:
     prefix: figurines-borgengineering-
-    count: 5
+    count: 8
 
 - type: localizedDataset
   id: FigurinesBorgGeneric
   values:
     prefix: figurines-borggeneric-
-    count: 5
+    count: 6
     
 - type: localizedDataset
   id: FigurinesBorgJanitor
   values:
     prefix: figurines-borgjanitor-
-    count: 5
+    count: 8
 
 - type: localizedDataset
   id: FigurinesBorgMedical
   values:
     prefix: figurines-borgmedical-
-    count: 5
+    count: 8
     
 - type: localizedDataset
   id: FigurinesBorgSalvage
   values:
     prefix: figurines-borgsalvage-
-    count: 5
+    count: 6
     
 - type: localizedDataset
   id: FigurinesBorgSecurity
   values:
     prefix: figurines-borgsecurity-
-    count: 5
+    count: 8
     
 - type: localizedDataset
   id: FigurinesBorgService
   values:
     prefix: figurines-borgservice-
-    count: 5
+    count: 6
